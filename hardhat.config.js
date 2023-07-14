@@ -1,5 +1,6 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 require('@nomiclabs/hardhat-ethers');
+const { alchemyApiKey, mnemonic } = require('./secrets.json');
 
 module.exports = {
   localhost: {
@@ -7,6 +8,12 @@ module.exports = {
   },
   hardhat: {
     // See its defaults
+  },
+  networks: {
+    goerli: {
+      url: `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`,
+      accounts: { mnemonic: mnemonic },
+    },
   },
   solidity: '0.8.18',
 };

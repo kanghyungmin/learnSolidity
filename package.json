@@ -24,6 +24,11 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@openzeppelin/contracts": "^4.9.2",
+    "alchemy-sdk": "^2.9.2",
+    "crypto": "^1.0.1",
+    "eth-lightwallet": "^4.0.0",
+    "mnemonics": "^1.1.3",
+    "noble": "^1.9.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
