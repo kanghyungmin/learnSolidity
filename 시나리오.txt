@@ -1,0 +1,72 @@
+해결 사항. 
+1. 운영에서 SWAP 시, Defi에서 oracle 정보를 어떻게 제공받는지 확인
+
+개발 진행 전, 필요 사항(9월)
+ 1. 서비스 기획 with UX engineer
+ 2. 디자인 도출 with UI engineer(By figma)
+ 3. UI/UX 채용
+ 4. Front 개발 방향 결정
+    - react native 로 Hybrid App 개발 
+    - Anroid / IOS 둘다 개발 필요성 : Android만 MVP로 하면 어떨징?
+
+개발 항목(11월)
+ 1. 블록체인 스마트 컨트랙트 작성(8월)
+    - 멀티시그 정책으로 스마트 컨트랙트 업그레이드 하기.
+    - 프로포절 올리고 goverance 정책 deploy 후, quorum threshold가 넘어가면 실행시키기
+    - token transafer / SWAP 
+    - freeze transfer
+    - pause/resume Smart Contract
+    - governance에 timelock controller 통합하기
+
+ 2. 시스템 구성/Backend 구조 설계 / 구현(9월)
+    - oAuth(goole) / 회원 모듈 / 보안(jwt)
+    - DB 연동 / 스키마 작성
+    - Web2 관련 로직 작성
+    - PG사 연동 / Metamask API 구성
+
+ 3. 블록체인 <> Backend 인터페이스 구성(9월, 10월)
+    - 각 스마트 컨트랙트에 대한 Evnet sourcing
+
+ 4. Dockerization 및 개발/운영 환경 구성(11월)
+    - 인프라 다이어그램 도출
+    - ECS 활용(Ochestration) 및 git actions을 활용한 CI/CD 구성
+    - DDos, SSL 등 보안 관련 사항 점검.
+
+데모 일정 확인(11월 기한)
+ 1. 운영에 올리기 전, 테스트 기간 필요(한달 소요)
+ 2. Bug fixing / 브랜치 전략 세우기
+
+
+//Compile smart contract
+//npx hardhat compile
+
+//hardhat node to local
+//npx hardhat node
+
+//contract deploy
+//npx hardhat run --network localhost scripts/deploy.js
+
+//hardhat contract console.
+//npx hardhat console --network localhost
+
+//run scripts
+//npx hardhat run --network localhost ./scripts/index.js
+
+
+  
+* Metabeat 
+- User Flow
+ 1. 회원가입 - 지갑 생성(자동) : 지갑 수탁 업체을 활용한 것으로 추정
+ 2. KYC 진행(업체: argos)
+ 3. Cefi에서 utility 코인 구매 후, 메타 마스크로 전송
+ 4. 다시 메타 마스크에서 앱 내 개인 지갑으로 전송
+ 5. 상기 과정을 모두 마친 후, 팬덤 활동에 참여 가능
+ 6. 앱 내에서 실질적으로 코인을 활용하기까지 2번의 가스비가 소요됨(현재, polygon 기준 30원)
+
+- NFT
+ 1. ERC1155 기준으로 NFT 발행(개인적으로, Contract 배포 비용을 절약하려고 한 것으로 보임)
+    - NFT collection URL : https://tinyurl.com/2kcspcsd
+ 2. 메타비트는 'Crypto.com'과 전략적 제휴 관계가 있는 것으로 보임. 
+    (NFT metadata가 'Crypto.com'에 최적화되어 있어 다른 곳에서는 보이지가 않음)
+ 
+
